@@ -1,6 +1,7 @@
 export interface Todo {
-    id: number;
-    userID: string;
-    task: 'pending' | 'completed';
-    createdAt: Date;
+  id: number
+  userID: number
+  task: string
+  status: 'pending' | 'completed'
+  createdAt: Date
 }
