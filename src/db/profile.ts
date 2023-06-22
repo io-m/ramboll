@@ -1,18 +1,38 @@
+import { OkPacket } from 'mysql2'
 import { connection } from '../database'
 import { User } from '../types/user'
 
-export const findProfileByID = async (id: number): Promise<User> => {
+export const editProfile = async (profile: User): Promise<string> => {
+  const [rows] = await (
+    await connection()
+  ).execute<OkPacket>(
+    `UPDATE users
+     SET username = ?, email = ?
+     WHERE id = ?`,
+    // @ts-ignore
+    [profile.username, profile.email, profile.id],
+  )
+
+  if (rows.affectedRows === 0) {
+    throw new Error('No user with that id')
+  }
+  const message = rows.message
+  return message
+}
+
+export const findProfileById = async (id: number): Promise<User> => {
   const [rows]: any = await (
     await connection()
-  ).execute(
-    `SELECT id, username, email FROM users WHERE id = ?`,
+  ).query(
+    `SELECT id, username, email
+     FROM users
+     WHERE id = ?`,
     // @ts-ignore
     [id],
   )
-
-  if (rows.length === 0) {
+  if (rows.affectedRows === 0) {
     throw new Error('No user with that id')
   }
-  const user: User = rows[0]
+  const user = rows[0] as User
   return user
 }

@@ -28,14 +28,3 @@ export const authenticateToken = (
     next()
   })
 }
-
-// Authorization middleware that allows only profile owners to fetch data
-export const ownersOnly = (req: Request, res: Response, next: NextFunction) => {
-  // @ts-ignore
-  const userId = req.user.id as number
-  const wantedProfileId = Number(req.params.id)
-  if (userId !== wantedProfileId) {
-    return res.status(401).json({ error: 'This is not your profile' })
-  }
-  next()
-}
