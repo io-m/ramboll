@@ -29,7 +29,11 @@ Node app and MySQL DB run in Docker, hence Docker must be installed.
 
 ## Installation
 
-Provide instructions on how to install and set up the project. Include any specific configuration steps.
+Just run Docker command:
+
+```bash
+docker-compose up
+```
 
 ## Usage
 
@@ -38,8 +42,6 @@ New to Docker? Please visit official site [documentation](https://docs.docker.co
 ## Tests
 
 Small test suit. Only 3 functions in auth middleware function authenticateToken. Run npm run test. Keep in mind to run your app in Docker first.
-
-Include the project's license information. Specify the license type and provide any necessary attribution or copyright notices.
 
 ---
 
@@ -53,6 +55,6 @@ This project includes a `docker-compose.yml` file that sets up a development env
 
 3. Run the following command to start the containers:
 
-   ```bash
-   docker-compose up
-   ```
+```bash
+docker-compose up
+```
