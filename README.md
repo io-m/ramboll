@@ -32,7 +32,7 @@ Node app and MySQL DB run in Docker, hence Docker must be installed.
 Just run Docker command:
 
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 
 ## Usage
@@ -56,5 +56,5 @@ This project includes a `docker-compose.yml` file that sets up a development env
 3. Run the following command to start the containers:
 
 ```bash
-docker-compose up
+docker-compose up --build
 ```
