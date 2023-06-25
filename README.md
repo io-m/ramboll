@@ -1,6 +1,4 @@
-# Project Title
-
-Short project description or overview.
+# Small TODO CRUD app with basic authentication logic
 
 ## Table of Contents
 
