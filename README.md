@@ -27,7 +27,7 @@ Node app and MySQL DB run in Docker, hence Docker must be installed.
 
 ## Installation
 
-Create 2 databases with any DB client: Good one is extension in VSCode []("https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2)
+Create 2 databases with any DB client: Good one is [extension]("https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2) in VSCode
 
 1. Users with this command
 
