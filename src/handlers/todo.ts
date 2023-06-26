@@ -1,12 +1,21 @@
 import express, { Router, Request, Response } from 'express'
 import { authenticateToken } from './../middlewares'
 import { Todo } from '../types/todo'
-import { createTodo, editTodo } from '../services/todo'
+import { createTodo, editTodo, getTodos } from '../services/todo'
 
 const router: Router = express.Router()
 
 // All routes below requires user to be authenticated
 router.use(authenticateToken)
+
+router.get('/', async (_req: Request, res: Response) => {
+  try {
+    const todos = await getTodos()
+    res.json({ todos })
+  } catch (error) {
+    res.json(error)
+  }
+})
 
 router.post('/', async (req: Request, res: Response) => {
   try {

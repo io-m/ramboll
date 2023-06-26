@@ -1,4 +1,4 @@
-import { findTodoById, saveTodo, updateTodo } from '../db/todo'
+import { fetchTodos, findTodoById, saveTodo, updateTodo } from '../db/todo'
 import { overwriteWithNewValues } from '../helpers'
 import { Todo } from '../types/todo'
 
@@ -14,4 +14,8 @@ export const editTodo = async (newTodo: Todo) => {
   const todo = await findTodoById(newTodo.id)
   overwriteWithNewValues<Todo>(todo, newTodo)
   return await updateTodo(todo)
+}
+
+export const getTodos = async () => {
+  return fetchTodos()
 }

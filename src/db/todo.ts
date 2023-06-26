@@ -18,6 +18,16 @@ export const saveTodo = async (todo: Todo) => {
   return rows.insertId
 }
 
+export const fetchTodos = async () => {
+  const [rows]: any = await (
+    await connection()
+  ).query(`SELECT * FROM todos`, [])
+  if (rows.affectedRows === 0) {
+    throw new Error('No todo found with that id')
+  }
+  return rows as Todo[]
+}
+
 export const findTodoById = async (id: number) => {
   const [rows]: any = await (
     await connection()
