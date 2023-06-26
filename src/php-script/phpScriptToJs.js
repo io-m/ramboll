@@ -28,6 +28,7 @@ class Person {
 class PersonProvider {
     // Method to get a person by given name
     getPerson(persons, givenName) {
+        // .map method would be more readable, but I wanted to be as much as possible 1 on 1 with php script
         for (let i = 0; i < persons.length; i++) {
             if (persons[i].getGivenName() === givenName) {
                 return persons[i];
