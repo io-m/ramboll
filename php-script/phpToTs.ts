@@ -101,8 +101,8 @@ const filteredPersons: Person[] = provider.filterPrefix(persons, 'Ms.')
 
 // Print the retrieved person's prefix and given name
 if (retrievedPerson) {
-  console.log(retrievedPerson.getPrefix())
-  console.log(retrievedPerson.getGivenName())
+  console.log("John's prefix ---> ", retrievedPerson.getPrefix()) // I added extra comments to get slightly more context
+  console.log("John's name ---> ", retrievedPerson.getGivenName())
   console.log('Ms(s):')
 
   // Print the prefixes and given names of the filtered persons
