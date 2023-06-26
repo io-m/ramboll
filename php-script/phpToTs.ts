@@ -87,6 +87,7 @@ const config = 'manual' // Configuration for creating the provider
 const provider: PersonProvider | null =
   PersonProviderFactory.createProvider(config)
 
+// Since it is nullable, check whether it exists first
 if (provider === null) {
   console.log('Provider is null')
   process.exit()
